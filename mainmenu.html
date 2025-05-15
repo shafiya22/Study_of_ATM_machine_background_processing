@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ATM Machine - Main Menu</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      background: linear-gradient(135deg, #1d2b64, #f8cdda);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Poppins', sans-serif;
+      overflow: hidden;
+      animation: backgroundMove 10s infinite alternate;
+    }
+
+    @keyframes backgroundMove {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 100% 50%; }
+    }
+
+    .menu-container {
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(10px);
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+      animation: fadeIn 2s ease-in-out;
+      width: 90%;
+      max-width: 700px;
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(-20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    .menu-container h1 {
+      color: #fff;
+      font-size: 36px;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 20px;
+    }
+
+    .menu-card {
+      background: linear-gradient(145deg, #ffffff44, #ffffff22);
+      border-radius: 15px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      transition: 0.4s ease;
+      cursor: pointer;
+    }
+
+    .menu-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4);
+      background: linear-gradient(145deg, #ffffff66, #ffffff33);
+    }
+
+    .menu-card i {
+      font-size: 40px;
+      color: #00c6ff;
+      margin-bottom: 10px;
+    }
+
+    .menu-card span {
+      display: block;
+      margin-top: 10px;
+      font-size: 18px;
+      color: #fff;
+      font-weight: bold;
+    }
+
+    .logout-btn {
+      margin-top: 30px;
+      width: 100%;
+      padding: 15px;
+      border: none;
+      border-radius: 30px;
+      background: linear-gradient(to right, #ff4e50, #f9d423);
+      font-size: 18px;
+      color: #fff;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.4s ease;
+      box-shadow: 0 0 15px #ff4e50;
+    }
+
+    .logout-btn:hover {
+      background: linear-gradient(to right, #f9d423, #ff4e50);
+      box-shadow: 0 0 25px #f9d423;
+      transform: scale(1.05);
+    }
+
+  </style>
+  <!-- Font Awesome icons -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <div class="menu-container">
+    <h1>Main Menu</h1>
+
+    <div class="menu-grid">
+      <div class="menu-card" onclick="window.location.href='checkbalance.html';">
+        <i class="fas fa-wallet"></i>
+        <span>Check Balance</span>
+      </div>
+
+      <div class="menu-card" onclick="window.location.href='withdraw.html';">
+        <i class="fas fa-hand-holding-usd"></i>
+        <span>Withdraw Cash</span>
+      </div>
+
+      <div class="menu-card" onclick="window.location.href='deposit.html';">
+        <i class="fas fa-money-bill-wave"></i>
+        <span>Deposit Cash</span>
+      </div>
+
+      <div class="menu-card" onclick="window.location.href='ministatement.html';">
+        <i class="fas fa-file-invoice-dollar"></i>
+        <span>Mini Statement</span>
+      </div>
+
+      <div class="menu-card" onclick="window.location.href='changepin.html';">
+        <i class="fas fa-key"></i>
+        <span>Change PIN</span>
+      </div>
+
+      <div class="menu-card" onclick="exitATM()">
+        <i class="fas fa-sign-out-alt"></i>
+        <span>Exit</span>
+      </div>
+    </div>
+
+    <button class="logout-btn" onclick="exitATM()">Logout</button>
+
+  </div>
+
+  <script>
+    function exitATM() {
+      alert("Thank you for using ATM! Visit again.");
+      window.location.href = "welcome.html"; // Redirect to welcome page
+    }
+  </script>
+
+</body>
+</html>

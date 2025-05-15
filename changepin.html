@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ATM Machine - Change PIN</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      background: linear-gradient(135deg, #1d2b64, #f8cdda);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Poppins', sans-serif;
+      overflow: hidden;
+      animation: backgroundMove 10s infinite alternate;
+    }
+
+    @keyframes backgroundMove {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 100% 50%; }
+    }
+
+    .container {
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(10px);
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+      animation: fadeIn 2s ease-in-out;
+      width: 90%;
+      max-width: 400px;
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(-20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    .container h1 {
+      color: #fff;
+      font-size: 32px;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    input[type="password"] {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 8px;
+      background: #ffffff22;
+      color: #fff;
+      font-size: 16px;
+    }
+
+    input[type="password"]::placeholder {
+      color: #eee;
+    }
+
+    .btn {
+      width: 100%;
+      padding: 15px;
+      border: none;
+      border-radius: 30px;
+      background: linear-gradient(to right, #ff4e50, #f9d423);
+      font-size: 18px;
+      color: #fff;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 20px;
+      transition: 0.4s ease;
+      box-shadow: 0 0 15px #ff4e50;
+    }
+
+    .btn:hover {
+      background: linear-gradient(to right, #f9d423, #ff4e50);
+      box-shadow: 0 0 25px #f9d423;
+      transform: scale(1.05);
+    }
+
+    .success-message {
+      text-align: center;
+      margin-top: 20px;
+      color: #00ff88;
+      font-weight: bold;
+      display: none;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Change PIN</h1>
+
+    <input type="password" id="currentPin" placeholder="Enter Current PIN" maxlength="6">
+    <input type="password" id="newPin" placeholder="Enter New PIN" maxlength="6">
+    <input type="password" id="confirmPin" placeholder="Confirm New PIN" maxlength="6">
+
+    <button class="btn" onclick="changePin()">Change PIN</button>
+
+    <div class="success-message" id="successMessage">PIN changed successfully!</div>
+  </div>
+
+  <script>
+    function changePin() {
+      const currentPin = document.getElementById('currentPin').value;
+      const newPin = document.getElementById('newPin').value;
+      const confirmPin = document.getElementById('confirmPin').value;
+
+      if (currentPin === "" || newPin === "" || confirmPin === "") {
+        alert("Please fill all the fields!");
+        return;
+      }
+
+      if (newPin !== confirmPin) {
+        alert("New PIN and Confirm PIN do not match!");
+        return;
+      }
+
+      if (newPin.length < 4) {
+        alert("PIN should be at least 4 digits!");
+        return;
+      }
+
+      // If all validations pass
+      document.getElementById('successMessage').style.display = 'block';
+
+      // Optionally: Clear the input fields after success
+      document.getElementById('currentPin').value = "";
+      document.getElementById('newPin').value = "";
+      document.getElementById('confirmPin').value = "";
+    }
+  </script>
+
+</body>
+</html>

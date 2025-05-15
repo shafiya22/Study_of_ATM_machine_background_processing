@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ATM Login</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Poppins', sans-serif;
+      overflow: hidden;
+    }
+
+    .login-container {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+      width: 90%;
+      max-width: 400px;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h2 {
+      color: #fff;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    input {
+      width: 100%;
+      padding: 15px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      background: #fff;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+
+    .button-container {
+      margin-top: 20px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    button {
+      width: 48%;
+      padding: 15px;
+      border: none;
+      border-radius: 10px;
+      background: linear-gradient(to right, #43cea2, #185a9d);
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s ease;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    button:hover {
+      background: linear-gradient(to right, #185a9d, #43cea2);
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="login-container">
+    <h2>ATM Login</h2>
+    <input type="text" id="accountNumber" placeholder="Enter Account Number" required>
+    <input type="password" id="pin" placeholder="Enter PIN" required>
+    
+    <div class="button-container">
+      <button onclick="login()">Submit</button>
+      <button onclick="clearFields()">Clear</button>
+    </div>
+  </div>
+
+  <script>
+    function login() {
+      var accNumber = document.getElementById("accountNumber").value;
+      var pin = document.getElementById("pin").value;
+
+      if (accNumber.trim() !== "" && pin.trim() !== "") {
+        // Redirect to Main Menu Page
+        window.location.href = "mainmenu.html"; // Make sure the file name matches your Main Menu page
+      } else {
+        alert("Please enter Account Number and PIN properly!");
+      }
+    }
+
+    function clearFields() {
+      document.getElementById("accountNumber").value = "";
+      document.getElementById("pin").value = "";
+    }
+  </script>
+
+</body>
+</html>

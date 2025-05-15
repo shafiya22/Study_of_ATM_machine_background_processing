@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Check Balance</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      background: linear-gradient(135deg, #43cea2, #185a9d);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Poppins', sans-serif;
+      overflow: hidden;
+    }
+
+    .balance-container {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      padding: 40px 30px;
+      border-radius: 20px;
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+      width: 90%;
+      max-width: 400px;
+      text-align: center;
+      animation: slideIn 1s ease;
+    }
+
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateY(-50px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h2 {
+      color: #fff;
+      margin-bottom: 20px;
+      font-size: 28px;
+    }
+
+    .balance-amount {
+      font-size: 36px;
+      font-weight: bold;
+      color: #fff;
+      margin: 20px 0;
+      background: linear-gradient(to right, #ffd700, #ff8c00);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .back-btn {
+      margin-top: 30px;
+      padding: 12px 30px;
+      border: none;
+      border-radius: 10px;
+      background: linear-gradient(to right, #ff416c, #ff4b2b);
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s ease;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+
+    .back-btn:hover {
+      transform: scale(1.05);
+      background: linear-gradient(to right, #ff4b2b, #ff416c);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="balance-container">
+    <h2>Your Available Balance</h2>
+    <div class="balance-amount">₹ 48,750.00</div>
+
+    <button class="back-btn" onclick="goBack()">Back to Menu</button>
+  </div>
+
+  <script>
+    function goBack() {
+      window.location.href = "mainmenu.html"; // Redirect back to Main Menu
+    }
+  </script>
+
+</body>
+</html>

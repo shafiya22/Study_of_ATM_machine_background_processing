@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ATM Machine - Welcome</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      background: linear-gradient(135deg, #1d2b64, #f8cdda);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Poppins', sans-serif;
+      overflow: hidden;
+      animation: backgroundMove 10s infinite alternate;
+    }
+
+    @keyframes backgroundMove {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 100% 50%; }
+    }
+
+    .welcome-container {
+      text-align: center;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(10px);
+      padding: 50px 40px;
+      border-radius: 20px;
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(-20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    .welcome-container h1 {
+      color: #fff;
+      font-size: 40px;
+      margin-bottom: 20px;
+    }
+
+    .welcome-container p {
+      color: #eee;
+      font-size: 20px;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      padding: 15px 40px;
+      background: #00c6ff;
+      background: linear-gradient(to right, #0072ff, #00c6ff);
+      color: white;
+      border: none;
+      border-radius: 30px;
+      font-size: 20px;
+      cursor: pointer;
+      transition: 0.4s ease;
+      box-shadow: 0 0 15px #00c6ff;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .btn:hover {
+      box-shadow: 0 0 25px #0072ff, 0 0 35px #00c6ff;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="welcome-container">
+    <h1>Welcome to ATM Machine</h1>
+    <p>Please insert your card to continue</p>
+    <!-- Link directly to login page -->
+    <a href="login.html" class="btn">Insert Card</a>
+  </div>
+
+</body>
+</html>

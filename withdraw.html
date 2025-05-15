@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ATM Machine - Withdraw Cash</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      background: linear-gradient(135deg, #1d2b64, #f8cdda);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Poppins', sans-serif;
+      overflow: hidden;
+      animation: backgroundMove 10s infinite alternate;
+    }
+
+    @keyframes backgroundMove {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 100% 50%; }
+    }
+
+    .withdraw-container {
+      text-align: center;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(10px);
+      padding: 50px 40px;
+      border-radius: 20px;
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+      animation: fadeIn 2s ease-in-out;
+      width: 90%;
+      max-width: 400px;
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(-20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    .withdraw-container h1 {
+      color: #fff;
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+
+    .withdraw-container p {
+      color: #eee;
+      font-size: 20px;
+      margin-bottom: 30px;
+    }
+
+    input {
+      width: 100%;
+      padding: 15px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      background: #fff;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+
+    .button-container {
+      margin-top: 20px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    button {
+      width: 48%;
+      padding: 15px;
+      border: none;
+      border-radius: 10px;
+      background: linear-gradient(to right, #43cea2, #185a9d);
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s ease;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    button:hover {
+      background: linear-gradient(to right, #185a9d, #43cea2);
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="withdraw-container">
+    <h1>Withdraw Cash</h1>
+    <p>Please enter the amount you want to withdraw</p>
+    <input type="number" id="withdrawAmount" placeholder="Amount (in USD)" required>
+
+    <div class="button-container">
+      <button onclick="withdraw()">Submit</button>
+      <button onclick="clearFields()">Clear</button>
+    </div>
+  </div>
+
+  <script>
+    function withdraw() {
+      var amount = document.getElementById("withdrawAmount").value;
+
+      if (amount.trim() !== "" && amount > 0) {
+        alert("You have successfully withdrawn $" + amount);
+        // Redirect to main menu after successful withdrawal
+        window.location.href = "mainmenu.html"; // Replace with your main menu page
+      } else {
+        alert("Please enter a valid amount!");
+      }
+    }
+
+    function clearFields() {
+      document.getElementById("withdrawAmount").value = "";
+    }
+  </script>
+
+</body>
+</html>

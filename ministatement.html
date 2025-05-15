@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ATM Machine - Mini Statement</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      background: linear-gradient(135deg, #1d2b64, #f8cdda);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Poppins', sans-serif;
+      overflow: hidden;
+      animation: backgroundMove 10s infinite alternate;
+    }
+
+    @keyframes backgroundMove {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 100% 50%; }
+    }
+
+    .container {
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(10px);
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+      animation: fadeIn 2s ease-in-out;
+      width: 90%;
+      max-width: 700px;
+      overflow-y: auto;
+      max-height: 80vh;
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(-20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    .container h1 {
+      color: #fff;
+      font-size: 36px;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .transaction-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    .transaction-table th, .transaction-table td {
+      padding: 12px;
+      text-align: center;
+      color: #fff;
+    }
+
+    .transaction-table th {
+      background-color: #00c6ff;
+    }
+
+    .transaction-table tr:nth-child(even) {
+      background-color: #ffffff22;
+    }
+
+    .transaction-table tr:nth-child(odd) {
+      background-color: #ffffff44;
+    }
+
+    .transaction-table td {
+      border-bottom: 1px solid #ffffff44;
+    }
+
+    .back-btn {
+      margin-top: 30px;
+      width: 100%;
+      padding: 15px;
+      border: none;
+      border-radius: 30px;
+      background: linear-gradient(to right, #ff4e50, #f9d423);
+      font-size: 18px;
+      color: #fff;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.4s ease;
+      box-shadow: 0 0 15px #ff4e50;
+    }
+
+    .back-btn:hover {
+      background: linear-gradient(to right, #f9d423, #ff4e50);
+      box-shadow: 0 0 25px #f9d423;
+      transform: scale(1.05);
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Mini Statement</h1>
+
+    <table class="transaction-table">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Transaction</th>
+          <th>Amount</th>
+          <th>Balance</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>2025-04-25</td>
+          <td>Withdrawal</td>
+          <td>-500</td>
+          <td>3000</td>
+        </tr>
+        <tr>
+          <td>2025-04-24</td>
+          <td>Deposit</td>
+          <td>1500</td>
+          <td>3500</td>
+        </tr>
+        <tr>
+          <td>2025-04-23</td>
+          <td>Withdrawal</td>
+          <td>-200</td>
+          <td>2000</td>
+        </tr>
+        <tr>
+          <td>2025-04-22</td>
+          <td>Deposit</td>
+          <td>1000</td>
+          <td>2200</td>
+        </tr>
+        <tr>
+          <td>2025-04-21</td>
+          <td>Withdrawal</td>
+          <td>-300</td>
+          <td>1200</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <button class="back-btn" onclick="window.location.href='mainmenu.html'">Back to Main Menu</button>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ATM Machine - Deposit Cash</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      background: linear-gradient(135deg, #1d2b64, #f8cdda);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Poppins', sans-serif;
+      overflow: hidden;
+      animation: backgroundMove 10s infinite alternate;
+    }
+
+    @keyframes backgroundMove {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 100% 50%; }
+    }
+
+    .container {
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(10px);
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+      width: 90%;
+      max-width: 600px;
+    }
+
+    .container h1 {
+      color: #fff;
+      font-size: 36px;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      color: #fff;
+      font-size: 18px;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 15px;
+      font-size: 18px;
+      border-radius: 10px;
+      border: none;
+      margin-top: 5px;
+    }
+
+    .button-group {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 30px;
+    }
+
+    .button-group button {
+      padding: 15px;
+      border: none;
+      border-radius: 10px;
+      font-size: 18px;
+      cursor: pointer;
+      transition: 0.3s ease;
+      width: 48%;
+    }
+
+    .confirm-btn {
+      background: linear-gradient(to right, #4caf50, #8bc34a);
+      color: #fff;
+    }
+
+    .cancel-btn {
+      background: linear-gradient(to right, #f44336, #ff5722);
+      color: #fff;
+    }
+
+    .confirm-btn:hover, .cancel-btn:hover {
+      transform: scale(1.05);
+    }
+
+    .success-message {
+      display: none;
+      background-color: #4caf50;
+      color: #fff;
+      padding: 15px;
+      margin-top: 20px;
+      text-align: center;
+      border-radius: 10px;
+      font-size: 18px;
+    }
+
+  </style>
+  <!-- Font Awesome icons -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Deposit Cash</h1>
+
+    <div class="form-group">
+      <label for="depositAmount">Enter Amount to Deposit:</label>
+      <input type="number" id="depositAmount" placeholder="Enter amount" required>
+    </div>
+
+    <div class="button-group">
+      <button class="confirm-btn" onclick="confirmDeposit()">Confirm Deposit</button>
+      <button class="cancel-btn" onclick="cancelDeposit()">Cancel</button>
+    </div>
+
+    <div id="successMessage" class="success-message">
+      Deposit Successful! Thank you.
+    </div>
+
+  </div>
+
+  <script>
+    function confirmDeposit() {
+      const depositAmount = document.getElementById('depositAmount').value;
+      
+      if (depositAmount <= 0 || isNaN(depositAmount)) {
+        alert('Please enter a valid amount to deposit.');
+        return;
+      }
+
+      // Simulate deposit confirmation (In real application, process the deposit here)
+      document.getElementById('successMessage').style.display = 'block';
+    }
+
+    function cancelDeposit() {
+      // Redirect to the main menu or previous page
+      window.location.href = "mainmenu.html"; // Adjust as necessary
+    }
+  </script>
+
+</body>
+</html>
